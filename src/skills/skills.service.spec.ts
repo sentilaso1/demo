@@ -50,7 +50,7 @@ describe('SkillsService', () => {
     const skill = { id: 1, name: 'Old', category: undefined } as Skill;
     repo.findById.mockResolvedValue(skill);
     repo.findByName.mockResolvedValue(null);
-    repo.save.mockImplementation(async (s) => s);
+    repo.save.mockImplementation((s: Skill): Skill => s);
 
     const result = await service.update(1, { name: 'New' });
     expect(result.name).toBe('New');
