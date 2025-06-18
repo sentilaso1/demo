@@ -3,6 +3,9 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { SkillsModule } from './skills/skills.module';
+import { UsersModule } from './users/users.module';
+import { GoalsModule } from './goals/goals.module';
+import { GoalSkillsModule } from './goal-skills/goal-skills.module';
 
 @Module({
   imports: [
@@ -17,6 +20,9 @@ import { SkillsModule } from './skills/skills.module';
       autoLoadEntities: true,
     }),
     SkillsModule,
+    UsersModule,
+    GoalsModule,
+    GoalSkillsModule,
   ],
   controllers: [AppController],
   providers: [AppService],
